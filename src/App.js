@@ -1,22 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+// import ClassComponent from './components/ClassComponent';
+import FunctionComponent from './components/FunctionComponents';
+import Titulo from './components/Titulo';
+// import Formulario from './components/Formulario';
 
 function App() {
+  // const nombreDeComponenteDeClase = "clase";
+  const nombreDeComponenteDeFuncion = "Función";
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Titulo title = "Clase 4"/> 
+        {/* <ClassComponent nombre = "Clase" /> */}
+
+        <FunctionComponent nombre = {nombreDeComponenteDeFuncion} />
+
+        {/* <Formulario/> */}
       </header>
     </div>
   );
