@@ -1,0 +1,18 @@
+.count{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    font-size: small;
+    align-items: center;
+}
+.numb{
+    display: flex;
+    justify-content: center;
+}
+.botton{
+    display: flex;
+    height: 30px;
+    font-size: 15px;
+    align-items: center;
+    margin-left: 5px;
+}
