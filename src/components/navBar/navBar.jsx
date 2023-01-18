@@ -3,6 +3,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from '../CartWidget/CartWidget';
+import { NavLink } from 'react-router-dom';
+import './navBar.css';
+
+
 
 function NavBar() {
     return (
@@ -12,16 +16,15 @@ function NavBar() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                <Nav.Link href="#home">Inicio </Nav.Link>
-                <Nav.Link href="#link">Productos</Nav.Link>
+                <NavLink className='nav-link' to='/'>Inicio</NavLink>
+                <NavLink className='nav-link'>Productos</NavLink>
                     <NavDropdown title="Categorias" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Juegos</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Programas </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Otros</NavDropdown.Item>
+                    <NavDropdown.Item><NavLink className='nav-link' to='/Categoria/Juegos'>Juegos</NavLink></NavDropdown.Item>
+                    <NavDropdown.Item><NavLink className='nav-link' to='/Categoria/Libro'>Libros</NavLink></NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
             </Navbar.Collapse>
-            <Nav.Link href="#cart"><CartWidget/></Nav.Link>
+            <NavLink><CartWidget/></NavLink>
         </Container>
     </Navbar>
     );

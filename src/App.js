@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/navBar/navBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Detalle from './pages/Detalle/Detalle';
-// import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import CartWidget from './components/CartWidget/CartWidget';
 
 function App() {
   return (
@@ -13,10 +13,11 @@ function App() {
     <NavBar/>
     <Routes>
       <Route path='/' element={<ItemListContainer nombre = 'Zona-Gamer'/>}/>
+      <Route path='/Categoria/:CategoriaId' element={<ItemListContainer/>}/>
+      <Route path ='/cart' element={<CartWidget/>}/>
       {/* <Route path='*' element={<Error/>}/> */}
       <Route path='Detalle' element={<Detalle/>}/>
     </Routes>
-    {/* <ItemDetailContainer /> */}
     </BrowserRouter>
   );
 }

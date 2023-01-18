@@ -1,34 +1,33 @@
 import './ItemListContainer.css'
 import Title from '../Title/Title'
-import ItemCount from '../ItemCount/ItemCount'
 import ItemList from '../ItemList/ItemList'
 import Alldata from '../../data/data.json'
 import { useState, useEffect } from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
+import { useParams } from 'react-router-dom';
 
 const ItemListContainer = ({nombre}) => {
-    const [data, setData] = useState([])
+    const [data, setData] = useState([]);
+    const {CategoriaId} = useParams();
+
     useEffect(() => {
         const getData = new Promise(resolve => {
             setTimeout(() => {
                 resolve(Alldata)
-            }, 3000)
-        })
-        getData.then((res) => setData(res))
-    }, [])
+            }, 2000)
+        });
+        if (CategoriaId) {
+            getData.then(res => setData(res.filter(item => item.Category === CategoriaId)))
+        }else{getData.then(res => setData(res))}
+    }, [CategoriaId])
 
-    const onAdd = (cantidad) => {
-        alert('Se agregaron ' + cantidad + ' productos al carrito') 
-    }
     return (
         <Container fluid ="xxl">
                 <Title greeting = {nombre}/>
-                <ItemCount initial={1} stock = {5} onAdd = {onAdd} />
             <Row>
-                <Col className ="d-flex mt-3 flex-wrap justify-content-between">
+                <Col className ="d-flex mt-3 flex-wrap justify-content-between mb-3">
                 <ItemList data = {data}/>
                 </Col>
             </Row>

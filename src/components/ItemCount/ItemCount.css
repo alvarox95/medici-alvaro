@@ -11,8 +11,9 @@
 }
 .botton{
     display: flex;
+    width: 100%;
     height: 30px;
-    font-size: 15px;
+    font-size: 100%;
     align-items: center;
     margin-left: 5px;
 }
