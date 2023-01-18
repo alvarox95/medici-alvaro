@@ -11,9 +11,9 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     const dataFilter = Alldata.filter(item => item.id === ItemId);
     setData(dataFilter);
+    console.log(dataFilter)
   }, [ItemId]);
 
-  console.log(Alldata)
   return (
     <Container fluid ="xxl">
             <Row>
