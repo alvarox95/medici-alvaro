@@ -4,19 +4,16 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import Error from './pages/Error/Error';
 import NavBar from './components/navBar/navBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import Detalle from './pages/Detalle/Detalle';
-import CartWidget from './components/CartWidget/CartWidget';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
   return (
     <BrowserRouter>
     <NavBar/>
     <Routes>
-      <Route path='/' element={<ItemListContainer nombre = 'Zona-Gamer'/>}/>
+      <Route path='/' element={<ItemListContainer />}/>
       <Route path='/Categoria/:CategoriaId' element={<ItemListContainer/>}/>
-      <Route path ='/cart' element={<CartWidget/>}/>
-      {/* <Route path='*' element={<Error/>}/> */}
-      <Route path='Detalle' element={<Detalle/>}/>
+      <Route path='/Item/:ItemId' element={<ItemDetailContainer/>}/>
     </Routes>
     </BrowserRouter>
   );
