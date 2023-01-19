@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import ItemCount from '../ItemCount/ItemCount';
 
-const ItemDetail = (data) => {
+const ItemDetail = ({data}) => {
 
     const onAdd = (cantidad) => {
       alert('Se agregaron ' + cantidad + ' productos al carrito') 

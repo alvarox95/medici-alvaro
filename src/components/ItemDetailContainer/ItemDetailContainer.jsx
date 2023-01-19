@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     // eslint-disable-next-line eqeqeq
-    const dataFilter = Alldata.filter(info => info.id == ItemId);
+    const dataFilter = Alldata.find((item) => item.id == ItemId);
     setData(dataFilter);
   }, [ItemId]);
   
