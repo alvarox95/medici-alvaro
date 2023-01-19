@@ -1,19 +1,21 @@
 import ItemDetail from "../ItemDetail/ItemDetail";
-import Alldata from "../../data/data";
+import Alldata from "../../data/data.json";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 
 const ItemDetailContainer = () => {
   const [data, setData] = useState([]);
-  const { ItemId } = useParams();
+  const { ItemId } = useParams() ;
 
   useEffect(() => {
-    const dataFilter = Alldata.filter(item => item.id === ItemId);
+    // eslint-disable-next-line eqeqeq
+    const dataFilter = Alldata.filter(info => info.id == ItemId);
     setData(dataFilter);
-    console.log(dataFilter)
   }, [ItemId]);
-
+  
+  console.log(data)
+  
   return (
     <Container fluid ="xxl">
             <Row>
