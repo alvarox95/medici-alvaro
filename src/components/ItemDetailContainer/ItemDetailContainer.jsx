@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
   return (
     <Container fluid ="xxl">
             <Row>
-                <Col className ="d-flex mt-3 flex-wrap justify-content-between mb-3">
+                <Col className ="d-flex mt-3 flex-wrap justify-content-center mb-3">
                   <ItemDetail data ={data} />
                 </Col>
             </Row>
