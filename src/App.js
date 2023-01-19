@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
     <NavBar/>
     <Routes>
-      <Route path='/' element={<ItemListContainer />}/>
+      <Route path='/' element={<ItemListContainer nombre= 'Zona-Gamer' />}/>
       <Route path='/Categoria/:CategoriaId' element={<ItemListContainer />}/>
       <Route path='/Item/:ItemId' element={<ItemDetailContainer />}/>
     </Routes>
