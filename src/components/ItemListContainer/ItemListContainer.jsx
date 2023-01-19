@@ -19,7 +19,7 @@ const ItemListContainer = ({nombre}) => {
             }, 2000)
         });
         if (CategoriaId) {
-            getData.then(res => setData(res.filter(item => item.Category === CategoriaId)))
+            getData.then(res => setData(res.filter(item => item.category === CategoriaId)))
         }else{getData.then(res => setData(res))}
     }, [CategoriaId])
 
